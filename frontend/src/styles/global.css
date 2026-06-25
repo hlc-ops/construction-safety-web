@@ -1,0 +1,216 @@
+@import './tokens.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-md);
+  line-height: var(--line-base);
+  color: var(--text);
+  background: var(--bg);
+  font-feature-settings: "tnum", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   Element Plus 主题覆盖（统一克制风）
+   ============================================================ */
+:root {
+  --el-color-primary: var(--brand);
+  --el-color-primary-light-3: #2d7558;
+  --el-color-primary-light-5: #5a9180;
+  --el-color-primary-light-7: #a8c8b9;
+  --el-color-primary-light-8: #c7dccf;
+  --el-color-primary-light-9: var(--brand-soft);
+  --el-color-primary-dark-2: var(--brand-2);
+
+  --el-color-success: var(--success);
+  --el-color-warning: var(--warning);
+  --el-color-danger: var(--danger);
+  --el-color-info: var(--info);
+
+  --el-bg-color: var(--surface);
+  --el-bg-color-page: var(--bg);
+  --el-text-color-primary: var(--text);
+  --el-text-color-regular: var(--text);
+  --el-text-color-secondary: var(--text-2);
+  --el-text-color-placeholder: var(--text-3);
+  --el-text-color-disabled: var(--text-disabled);
+
+  --el-border-color: var(--border);
+  --el-border-color-light: var(--border);
+  --el-border-color-lighter: var(--divider);
+  --el-border-color-extra-light: var(--divider);
+
+  --el-fill-color-blank: var(--surface);
+  --el-fill-color-light: var(--brand-soft);
+  --el-fill-color-lighter: #f9fafb;
+
+  --el-font-size-base: var(--fs-md);
+  --el-border-radius-base: var(--radius-2);
+  --el-border-radius-small: var(--radius-1);
+
+  --el-box-shadow-light: var(--shadow-1);
+  --el-box-shadow: var(--shadow-2);
+}
+
+/* ===== Card：去重阴影，改细描边 ===== */
+.el-card {
+  border-radius: var(--radius-3) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.el-card.is-hover-shadow:hover,
+.el-card.is-always-shadow {
+  box-shadow: var(--shadow-2) !important;
+  border-color: var(--border-strong) !important;
+}
+.el-card__header {
+  padding: var(--space-4) var(--space-5) !important;
+  border-bottom: 1px solid var(--divider) !important;
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-md);
+  color: var(--text);
+}
+.el-card__body {
+  padding: var(--space-5) !important;
+}
+
+/* ===== Button：克制 + 收窄圆角 ===== */
+.el-button {
+  border-radius: var(--radius-2) !important;
+  font-weight: var(--fw-medium);
+  --el-button-hover-text-color: var(--brand);
+}
+.el-button--primary {
+  background: var(--brand);
+  border-color: var(--brand);
+}
+.el-button--primary:hover,
+.el-button--primary:focus {
+  background: var(--brand-2);
+  border-color: var(--brand-2);
+}
+.el-button.is-link {
+  font-weight: var(--fw-medium);
+}
+
+/* ===== Input ===== */
+.el-input__wrapper {
+  box-shadow: 0 0 0 1px var(--border) inset !important;
+  border-radius: var(--radius-2) !important;
+  background: var(--surface);
+  transition: box-shadow 0.15s ease;
+}
+.el-input__wrapper:hover {
+  box-shadow: 0 0 0 1px var(--border-strong) inset !important;
+}
+.el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px var(--brand) inset !important;
+}
+
+/* ===== Table：表头中性化 ===== */
+.el-table {
+  --el-table-border-color: var(--divider);
+  --el-table-header-bg-color: #f9fafb;
+  --el-table-row-hover-bg-color: #f5f7fa;
+  font-size: var(--fs-md);
+}
+.el-table th.el-table__cell {
+  background: #f9fafb !important;
+  color: var(--text-2) !important;
+  font-weight: var(--fw-medium) !important;
+  font-size: var(--fs-sm) !important;
+  letter-spacing: 0.3px;
+}
+.el-table td.el-table__cell { color: var(--text); }
+
+/* ===== Tag：稍微圆点 ===== */
+.el-tag {
+  border-radius: var(--radius-1);
+  --el-tag-bg-color: var(--brand-soft);
+  --el-tag-border-color: var(--brand-line);
+  --el-tag-text-color: var(--brand-2);
+}
+.el-tag--small { padding: 0 6px; }
+
+/* ===== Dialog ===== */
+.el-dialog {
+  border-radius: var(--radius-3) !important;
+}
+.el-dialog__header {
+  padding: var(--space-5) var(--space-6) var(--space-3) !important;
+  border-bottom: 1px solid var(--divider);
+  margin: 0 !important;
+}
+.el-dialog__title { font-weight: var(--fw-semibold); }
+.el-dialog__body { padding: var(--space-5) var(--space-6) !important; }
+.el-dialog__footer { padding: var(--space-3) var(--space-6) var(--space-5) !important; }
+
+/* ===== Tabs ===== */
+.el-tabs__item {
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-md);
+}
+.el-tabs__active-bar { height: 2px; background: var(--brand); }
+.el-tabs__nav-wrap::after { background: var(--divider); height: 1px; }
+
+/* ===== Menu (侧栏在 AppLayout 里自定义) ===== */
+.el-menu { border-right: none !important; }
+
+/* ===== Form ===== */
+.el-form-item__label { color: var(--text-2); font-weight: var(--fw-medium); }
+
+/* ===== Alert：去掉俗气阴影 ===== */
+.el-alert { border-radius: var(--radius-2); padding: var(--space-3) var(--space-4); }
+
+/* ============================================================
+   通用工具类（页面共用）
+   ============================================================ */
+
+/* 页面顶部标题区 */
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--divider);
+}
+.page-title {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+  color: var(--text);
+  line-height: var(--line-tight);
+  letter-spacing: 0.2px;
+}
+.page-desc {
+  font-size: var(--fs-md);
+  color: var(--text-2);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-5);
+  line-height: var(--line-base);
+}
+
+/* 滚动条：细 + 柔 */
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: #d8dce3;
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-thumb:hover { background: #b8bcc4; }
