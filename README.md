@@ -12,6 +12,34 @@
 
 ---
 
+## 📸 系统截图
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/screenshot-01.png" width="100%"/></td>
+    <td><img src="docs/screenshots/screenshot-02.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/screenshot-03.png" width="100%"/></td>
+    <td><img src="docs/screenshots/screenshot-04.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/screenshot-05.png" width="100%"/></td>
+    <td><img src="docs/screenshots/screenshot-06.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/screenshot-07.png" width="100%"/></td>
+    <td><img src="docs/screenshots/screenshot-08.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><img src="docs/screenshots/screenshot-09.png" width="50%"/></td>
+  </tr>
+</table>
+
+> 完整演示视频(系统操作流程,约 1-2 分钟)请见 [B 站 / YouTube 链接 — 待补]
+
+---
+
 ## 📌 项目亮点
 
 - **YOLO + LLM 双保险检测**:YOLO 第一道(快速、低成本),视觉大模型第二道复核(降低误报、生成整改建议)
